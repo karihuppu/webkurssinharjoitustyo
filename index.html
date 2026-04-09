@@ -1,40 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Chill Website</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="assets/js/script.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<meta charset="UTF-8">
+<title>Chill Website</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
 <body>
+<canvas id="equalizer"></canvas>
 
-<h1>CHILL WEBSITE</h1>
-<h2>listen</h2>
-<p>keep calm</p>
+    <header>
+        <h1>CHILL WEBSITE</h1>
+    </header>
 
-<a href="https://www.google.com/" target="_blank">
-<img src="/assets/pictures/chill.jpg" alt="chill.jpg" title="ascending" width="200" height="200"> <br> <!--style="width:42px;height:42px;-->
-</a>
+<main>
+    <!-- Chill Image Section -->
+    <section>
+        <p>Keep calm and click me ⬇️</p>
+        <p id="chilltest"></p>
+        <a href="https://www.google.com/" target="_blank" class="image-link">
+            <img src="assets/pictures/chill.jpg" onclick="myFunction()" alt="Chill image" width="200" height="200">
+        </a>
+    </section>
 
-<h2>Chill button</h2>
+    <!-- Chill Button Section -->
+    <section>
+        <h2>Chill Button</h2>
+        <button onclick="setTimeout(chillFunction, 10000)">Chill for 10 seconds</button>
 
-<form>
-    <label for="chillbutton">Click to refresh page</label><br>
-    <input type="button" id="html" name="chillbutton" value="Refresh" onclick="window.location.reload();"><br>
-</form> 
-<br>
-<form>
-    <label for="test">Type for fun:</label><br>
-    <input type="text" id="test" name="test"><br>
+    
+    </section>
 
-  </form>
+    <section>
+        <button id="chillbutton">Play Song</button>
+        <audio id="sonderAudio" src="assets/songs/Sonder.mp3"></audio>
+        <br>
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+    </section>
 
-<br>
+    <!-- Text Input Section -->
+    <section>
+        <h2>Type for Fun</h2>
+        <form>
+            <input type="text" id="test" name="test">
+        </form>
+    </section>
 
-<a href="https://www.google.com/" target="_blank">Google</a> <br>
 
-<video width="400" controls>
-  <source src="assets/videos/ronaldo.mp4" type="video/mp4">
-  Your browser does not support HTML video.
-</video>
-<h1>SIPPIN</h1>
+
+    <!-- Habits Table Section -->
+    <section>
+        <h2>Chill Habits</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Habit</th>
+                    <th>Time Needed</th>
+                    <th>Effect</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Deep Breathing</td>
+                    <td>5 min</td>
+                    <td>Reduces stress 🧘</td>
+                </tr>
+                <tr>
+                    <td>Walking in nature</td>
+                    <td>30 min</td>
+                    <td>Improves mood 🌿</td>
+                </tr>
+                <tr>
+                    <td>Journaling</td>
+                    <td>10 min</td>
+                    <td>Organizes thoughts ✍️</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<footer>
+    <p>© 2026 Chill Website</p>
+</footer>
+
+
+<!-- Draggable Floating Panel (Left Side, White) -->
+<div id="floatingPanel" class="floating-panel">
+    <div class="drag-handle"></div>   <!-- Drag from here -->
+    
+    <button onclick="displayDate()" id="myFloatBtn">When is it time to chill? </button>
+    <p id="demo"></p>
+</div>
+
+<script src="/assets/script.js"></script>
 </body>
 </html>
